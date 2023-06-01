@@ -1,17 +1,19 @@
+import * as React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./components/Home.js";
-import Search from "./components/Search";
 
+import Login from "./components/Login";
 
 function App() {
-  
   return (
-    
-    <div className="App">
-      <Home />
-      <Search />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 
