@@ -3,7 +3,8 @@ const http = require('http');
 const port = 5000;
 const hostname = "127.0.0.1";
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+const session = require('express-session')
 const app = express();
 const server = http.createServer(app);
 const userRoute = require('./routes/user')
@@ -11,6 +12,11 @@ const itemRoute = require('./routes/item')
 
 //middlewares will go here
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+}));
 app.use(
     cors({
       origin: "http://localhost:3000",
@@ -18,6 +24,9 @@ app.use(
       credentials: true,
     })
   );
+
+  app.use(passport.initialize());
+  app.use(passport.session());
 
 
 
