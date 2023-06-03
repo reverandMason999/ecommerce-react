@@ -1,2 +1,9 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    transition: all 3ms ease;
+    scroll-behavior: smooth;
+    background-color: rgb(235, 147, 17);
+    }
 
-
+   
