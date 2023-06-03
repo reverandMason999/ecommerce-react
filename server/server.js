@@ -9,6 +9,10 @@ const app = express();
 const server = http.createServer(app);
 const userRoute = require('./routes/user')
 const itemRoute = require('./routes/item')
+const loginRoute = require('./routes/login')
+const passport = require('passport')
+const dotenv = require('dotenv').config()
+
 
 //middlewares will go here
 app.use(express.json());
@@ -33,6 +37,7 @@ app.use(
 // eventually the paths to our routes will live here
 app.use(userRoute);
 app.use(itemRoute);
+app.use(loginRoute);
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);

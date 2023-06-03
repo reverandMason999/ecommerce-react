@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { User } = '../models'
+const { User } = require('../models')
+const bcrypt = require('bcrypt');
 
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
@@ -8,11 +9,14 @@ router.post('/login', async (req, res) => {
         console.log(err)
     })
     if(user) {
-        const matchPassword = await bcrypt.compare(password, user.password)
-    }
-    if(matchPassword) {
+        const result = await bcrypt.compare(password, user.password)
+        
+        if(result){
+   
         req.session.user = user
         req.session.authorized = true;
+        res.json({message: 'you are logged in!'});
+        }
     }
 })
 

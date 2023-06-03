@@ -21,16 +21,16 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING
   },
+{
+    sequelize,
+    modelName: 'User',
+  },
   {
     hooks: {
       async beforeCreate(user) {
         user.password = await bcrypt.hash(user.password, 11);
       }
     }
-  }, 
-  {
-    sequelize,
-    modelName: 'User',
   });
   return User;
 };
