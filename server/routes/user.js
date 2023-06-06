@@ -13,7 +13,7 @@ router.get('/user/:id', async (req, res) => {
 });
 
 router.post('/user', async (req, res) => { 
-    const { username, email, password} = req.body;
+    const { username, email, password } = req.body;
     const newUser = await User.create({
         username,
         email,
