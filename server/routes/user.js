@@ -12,15 +12,6 @@ router.get('/user/:id', async (req, res) => {
     res.json(user)
 });
 
-router.post('/user', async (req, res) => { 
-    const { username, email, password } = req.body;
-    const newUser = await User.create({
-        username,
-        email,
-        password
-    })
-    res.json(newUser)
-});
 
 router.delete('/user/:id', async (req, res) => {
     const { id } = req.params;

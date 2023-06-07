@@ -17,20 +17,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    email: DataTypes.STRING,
     username: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: DataTypes.STRING
   },
-{
+  {
+  hooks: {
+      async beforeCreate(user) {
+        user.password = await bcrypt.hash(user.password, 10);
+      }
+      },
     sequelize,
     modelName: 'User',
-  },
-  {
-    hooks: {
-      async beforeCreate(user) {
-        user.password = await bcrypt.hash(user.password, 11);
-      }
-    }
-  });
+  
+});
   return User;
 };
