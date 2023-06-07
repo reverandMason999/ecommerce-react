@@ -9,8 +9,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './TopBar.css';
 import { Link } from 'react-router-dom';
 
-function TopBar() {
+const TopBar = () => {
   return (
+   
     <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#"class="custom-brand">ShopSavvy</Navbar.Brand>
