@@ -1,5 +1,8 @@
+import Banner from './components/Banner';
+import Categories from './components/Categories';
 import * as React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "./logo.svg";
 import "./App.css";
 import TopBar from './components/TopBar';
@@ -12,12 +15,19 @@ import Product from "./pages/Product";
 import ProductSearch from "./pages/ProductSearch";
 import Sell from "./pages/Sell";
 import SignUp from "./pages/SignUp";
+import Account from "./pages/Account";
 
 function App() {
   return (
-    <>
-    <TopBar/>
-    <Router>
+  
+    <>  <Router>
+    <div className="App">
+      <header className="App-header">
+        <TopBar/>
+      </header>
+        <Banner/>
+        <Categories/>
+    </div>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
@@ -28,8 +38,10 @@ function App() {
         <Route path="/productsearch" element={<ProductSearch />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
+
     </>
   );
 }
