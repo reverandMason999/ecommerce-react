@@ -1,20 +1,16 @@
-import * as React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './TopBar.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import './TopBar.css';
-import { Link } from 'react-router-dom';
 
-const TopBar = () => {
+function TopBar() {
   return (
-   
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"class="custom-brand">ShopSavvy</Navbar.Brand>
+        <Navbar.Brand href="#">Shopping</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -32,19 +28,12 @@ const TopBar = () => {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            {/* <Nav.Link href="#action1">Home</Nav.Link> */}
-            {/* <Nav.Link href="#action2">Deals</Nav.Link>  */}
-            <Nav.Link as={Link} to="/Buy"> Buy</Nav.Link>
-            <Nav.Link as={Link} to="/sell"> Sell</Nav.Link>
-            <Nav.Link as={Link} to="/account"> Account</Nav.Link>
+            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="#action2">Deals</Nav.Link>
             <Nav.Link href="#" disabled>
-            
+              Link
             </Nav.Link>
           </Nav>
-          <div className='card'>
-          <div className='searchbox'> 
-         
-          
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -54,8 +43,6 @@ const TopBar = () => {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          </div>
-          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
