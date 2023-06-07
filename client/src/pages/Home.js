@@ -1,6 +1,10 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Search from "../components/Search";
+import Account from "./Account";
+
+
 const Home = () => {
 const handledropdown = (event) => {
   console.log(event.target.value);
@@ -13,5 +17,12 @@ const handledropdown = (event) => {
     </div>
   );
 };
+
+
+
+
+
+
+
 
 export default Home;
