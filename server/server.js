@@ -10,6 +10,7 @@ const server = http.createServer(app);
 const userRoute = require('./routes/user')
 const itemRoute = require('./routes/item')
 const loginRoute = require('./routes/login')
+const registerRoute = require('./routes/register')
 const passport = require('passport')
 require('dotenv').config()
 
@@ -36,12 +37,10 @@ app.use(
 
 
 // eventually the paths to our routes will live here
-app.get('/', (req, res) => {
-  res.json({message: 'it worked!'})
-});
 app.use(userRoute);
 app.use(itemRoute);
 app.use(loginRoute);
+app.user(registerRoute);
 
 
 server.listen(port, hostname, () => {
