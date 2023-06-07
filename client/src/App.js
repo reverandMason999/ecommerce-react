@@ -18,7 +18,6 @@ import SignUp from "./pages/SignUp";
 import Account from "./pages/Account";
 
 function App() {
-
   return (
   
     <>  <Router>
@@ -46,5 +45,4 @@ function App() {
     </>
   );
 }
-
 export default App;
