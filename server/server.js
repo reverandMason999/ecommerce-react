@@ -12,7 +12,7 @@ const itemRoute = require('./routes/item')
 const loginRoute = require('./routes/login')
 const registerRoute = require('./routes/register')
 const passport = require('passport')
-require('dotenv').config()
+const dotenv = require('dotenv').config()
 
 
 //middlewares will go here
@@ -32,7 +32,7 @@ app.use(
 
   app.use(passport.initialize());
   app.use(passport.session());
-  
+
 
 
 
@@ -41,7 +41,6 @@ app.use(userRoute);
 app.use(itemRoute);
 app.use(loginRoute);
 app.user(registerRoute);
-
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
