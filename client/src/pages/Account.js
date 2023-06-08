@@ -24,6 +24,7 @@ const Account = () => {
     <Card body>
       <Formik
         initialValues={{ email: '', password: '' }}
+        
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -34,9 +35,9 @@ const Account = () => {
       >
         {({ isSubmitting }) => (
           <Form>
-            <Field type="email" name="email" />
+            <Field type="email" name="email" placeholder='email'/>
             <ErrorMessage name="email" component="div" />
-            <Field type="password" name="password" />
+            <Field type="password" name="password" placeholder='password' />
             <ErrorMessage name="password" component="div" />
             <Button type="submit" disabled={isSubmitting}>
               Register
