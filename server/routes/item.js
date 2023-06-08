@@ -8,6 +8,7 @@ router.get('/item', async (req, res) => {
 });
 
 router.get('/item/:id', async (req, res) => {
+    const { id } = req.params;
     const item = await Item.findByPk(req.params.id)
     res.json(item)
 });
