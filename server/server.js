@@ -14,7 +14,7 @@ const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const userItemRoute = require('./routes/user-item')
 const passport = require('passport');
-const dotenv = require('dotenv').config()
+require('dotenv').config();
 
 
 //middlewares will go here

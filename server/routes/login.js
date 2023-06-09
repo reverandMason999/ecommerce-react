@@ -2,11 +2,12 @@ const express = require('express');
 const passport = require('../auth/passport');
 const router = express.Router();
 const rateLimit = require('express-rate-limit');
+const session = require('express-session');
 
 const loginLimit = rateLimit({
     windowMs: 30 * 60 * 1000, 
 	max: 6, 
-	message: 'Too many unsuccessful login attempts, please try again after 25 minutes',
+	message: 'Too many unsuccessful login attempts, please try again after 30 minutes',
 	standardHeaders: true, 
 	legacyHeaders: false,
 })
