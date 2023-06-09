@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const TopBar = () => {
   return (
    
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light">
       <Container fluid>
         <Navbar.Brand href="#"class="custom-brand">ShopSavvy</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -41,21 +41,15 @@ const TopBar = () => {
             
             </Nav.Link>
           </Nav>
-          <div className='card'>
-          <div className='searchbox'> 
-         
-          
-          <Form className="d-flex">
+          <Form className="d-flex align-items-center">
             <Form.Control
               type="search"
               placeholder="Search"
-              className="me-2"
+              className="me-2 search-box"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success m-0">Search</Button>
           </Form>
-          </div>
-          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
