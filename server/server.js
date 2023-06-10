@@ -11,6 +11,7 @@ const userRoute = require('./routes/user')
 const itemRoute = require('./routes/item')
 const loginRoute = require('./routes/login')
 const registerRoute = require('./routes/register')
+const paymentRoute = require('./routes/Payment')
 const passport = require('passport')
 const dotenv = require('dotenv').config()
 
@@ -24,7 +25,7 @@ app.use(session({
 }));
 app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: "http://localhost:3000/",
       methods: "GET,POST,PUT,DELETE",
       credentials: true,
     })
@@ -40,7 +41,8 @@ app.use(
 app.use(userRoute);
 app.use(itemRoute);
 app.use(loginRoute);
-app.user(registerRoute);
+app.use(registerRoute);
+app.use(paymentRoute);
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
