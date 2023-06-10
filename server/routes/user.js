@@ -6,7 +6,7 @@ router.get('/user', async (req, res) => {
     const users = await User.findAll()
     res.json(users)
 });
-
+ //could do a post that searches for a user by username for a search bar
 router.get('/user/:id', async (req, res) => {
     const user = await User.findByPk(req.params.id)
     res.json(user)

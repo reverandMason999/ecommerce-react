@@ -12,9 +12,10 @@ const loginLimit = rateLimit({
 	legacyHeaders: false,
 })
 
-router.post('/login', loginLimit, passport.authenticate('local', { failureRedirect: '/login-failure' }), (req, res) => {
+router.post('/login', loginLimit, passport.authenticate('local', { failureFlash: true }), (req, res) => {
     res.json(req.user);  //req.user is the logged in user info on the session object
   });
+  
   
   router.post('/logout', (req, res) => {
     // req.logout();
