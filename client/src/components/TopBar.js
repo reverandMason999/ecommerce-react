@@ -7,15 +7,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './TopBar.css';
-import {BsCart4} from 'react-icons/bs' ;
+import { BsCart4 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   return (
-   
-    <Navbar bg="light" expand="lg">
+
+    <Navbar bg="light">
       <Container fluid>
-        <Navbar.Brand href="#"class="custom-brand"> ShopSavvy</Navbar.Brand>
+        <Navbar.Brand href="#" class="custom-brand"> ShopSavvy</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -24,14 +24,10 @@ const TopBar = () => {
             navbarScroll
           >
             <NavDropdown title="Categories" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Furniture</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Tech</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Clothing</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Jewelry</NavDropdown.Item>
             </NavDropdown>
             {/* <Nav.Link href="#action1">Home</Nav.Link> */}
             {/* <Nav.Link href="#action2">Deals</Nav.Link>  */}
@@ -39,31 +35,27 @@ const TopBar = () => {
             <Nav.Link as={Link} to="/sell"> Sell</Nav.Link>
             <Nav.Link as={Link} to="/account"> Account</Nav.Link>
             <Nav.Link href="#" disabled>
-            
+
             </Nav.Link>
           </Nav>
-          <div className='card'>
-          <div className='searchbox'> 
-          {/* <div className='Account'> </div> */}
-          <div className='logo'> 
-          <Form className="d-flex">
+          <div>
+          <Form className="d-flex align-items-center">
+           
             <Form.Control
               type="search"
               placeholder="Search"
-              className="me-2"
+              className="me-2 search-box"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-       
-          </div>
+            <Button variant="outline-success m-0">Search</Button>
           
-          </div> 
+          </Form>
           </div>
-            <div className='cart'> 
+          <div className='cart'>
           <BsCart4 /> </div>
+        
         </Navbar.Collapse>
-      
+
       </Container>
     </Navbar>
   );
