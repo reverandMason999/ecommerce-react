@@ -6,13 +6,14 @@ router.get('/user', async (req, res) => {
     const users = await User.findAll()
     res.json(users)
 });
-
+ //could do a post that searches for a user by username for a search bar
 router.get('/user/:id', async (req, res) => {
     const user = await User.findByPk(req.params.id)
     res.json(user)
 });
 
 
+//delete a user's account
 router.delete('/user/:id', async (req, res) => {
     const { id } = req.params;
     const deletedUser = await User.destroy({
@@ -23,6 +24,7 @@ router.delete('/user/:id', async (req, res) => {
     res.json(deletedUser);
 });
 
+//this will update a user by sending their input as the request body 
 router.put('/user/:id', async (req, res) => {
     const { id } = req.params;
     const updatedUser = await User.update(req.body, {

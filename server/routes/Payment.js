@@ -10,6 +10,10 @@ const stripe = require ('stripe')(process.env.STRIPE_SECRET_TEST)
 router.post('/payment', async (req, res) => {
     let {amount, id} = req.body 
     console.log(amount)
+  
+router.post('/payment', cors(), async (req, res) => {
+    let { amount, id } = req.body 
+
     try {
       const payment = await stripe.paymentIntent.create({
         amount,
