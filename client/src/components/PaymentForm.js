@@ -26,6 +26,12 @@ export default function PaymentForm() {
     const stripe = useStripe()
     const elements = useElements()
 
+    const [state, setState] = useState({
+        CardNumber: '',
+        ExpDate: '',
+        CVC: ''
+    });
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const {error, paymentMethod} = await stripe.createPaymentMethod({
@@ -37,7 +43,7 @@ export default function PaymentForm() {
 if (!error) {
     try { 
         const {id} = paymentMethod
-        const response = await axios.post("https://localhost:5000/payment", {
+        const response = await axios.post("http://localhost:5000/payment", {withCredentials:true}, {
             amount: 1000,
             id
         })
