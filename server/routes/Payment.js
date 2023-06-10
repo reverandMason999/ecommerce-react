@@ -6,7 +6,7 @@ const cors = require ('cors')
 
 
 router.post('/payment', cors(), async (req, res) => {
-    let {amount, id} = req.body 
+    let { amount, id } = req.body 
     try {
       const payment = await stripe.paymentIntent.create({
         amount,
