@@ -7,14 +7,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './TopBar.css';
+import { BsCart4 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   return (
-   
+
     <Navbar bg="light">
       <Container fluid>
-        <Navbar.Brand href="#"class="custom-brand">ShopSavvy</Navbar.Brand>
+        <Navbar.Brand href="#" class="custom-brand"> ShopSavvy</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -38,7 +39,7 @@ const TopBar = () => {
             <Nav.Link as={Link} to="/sell"> Sell</Nav.Link>
             <Nav.Link as={Link} to="/account"> Account</Nav.Link>
             <Nav.Link href="#" disabled>
-            
+
             </Nav.Link>
           </Nav>
           <Form className="d-flex align-items-center">
@@ -50,7 +51,11 @@ const TopBar = () => {
             />
             <Button variant="outline-success m-0">Search</Button>
           </Form>
+          <div className='cart'>
+            <BsCart4 />
+          </div>
         </Navbar.Collapse>
+
       </Container>
     </Navbar>
   );
