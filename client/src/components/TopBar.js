@@ -24,14 +24,10 @@ const TopBar = () => {
             navbarScroll
           >
             <NavDropdown title="Categories" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Furniture</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Tech</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Clothing</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">Jewelry</NavDropdown.Item>
             </NavDropdown>
             {/* <Nav.Link href="#action1">Home</Nav.Link> */}
             {/* <Nav.Link href="#action2">Deals</Nav.Link>  */}
@@ -42,7 +38,9 @@ const TopBar = () => {
 
             </Nav.Link>
           </Nav>
+          <div>
           <Form className="d-flex align-items-center">
+           
             <Form.Control
               type="search"
               placeholder="Search"
@@ -50,10 +48,12 @@ const TopBar = () => {
               aria-label="Search"
             />
             <Button variant="outline-success m-0">Search</Button>
+          
           </Form>
-          <div className='cart'>
-            <BsCart4 />
           </div>
+          <div className='cart'>
+          <BsCart4 /> </div>
+        
         </Navbar.Collapse>
 
       </Container>
