@@ -44,8 +44,8 @@ const TopBar = () => {
           </Nav>
           <div className='card'>
           <div className='searchbox'> 
-         
-          
+          {/* <div className='Account'> </div> */}
+          <div className='logo'> 
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -59,6 +59,7 @@ const TopBar = () => {
           </div>
           
           </div> 
+          </div>
             <div className='cart'> 
           <BsCart4 /> </div>
         </Navbar.Collapse>
