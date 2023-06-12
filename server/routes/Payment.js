@@ -2,16 +2,23 @@ const express = require ("express")
 const router = express.Router();
 require('dotenv').config()
 const stripe = require ('stripe')(process.env.STRIPE_SECRET_TEST)
-const cors = require ('cors')
 
 
+
+
+
+router.post('/payment', async (req, res) => {
+    let {amount, id} = req.body 
+    console.log(amount)
+  
 router.post('/payment', cors(), async (req, res) => {
     let { amount, id } = req.body 
+
     try {
       const payment = await stripe.paymentIntent.create({
         amount,
         currency: 'USD',
-        description: "Shop Savvy",
+        description: "ShopSavvy",
         payment_method: id,
         confirm: true 
       })

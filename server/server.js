@@ -8,13 +8,14 @@ const session = require('express-session');
 const helmet = require('helmet')
 const app = express();
 const server = http.createServer(app);
-const userRoute = require('./routes/user');
-const itemRoute = require('./routes/item');
-const loginRoute = require('./routes/login');
-const registerRoute = require('./routes/register');
-const userItemRoute = require('./routes/user-item')
-const passport = require('passport');
-require('dotenv').config();
+const userRoute = require('./routes/user')
+const itemRoute = require('./routes/item')
+const loginRoute = require('./routes/login')
+const registerRoute = require('./routes/register')
+const paymentRoute = require('./routes/Payment')
+const passport = require('passport')
+const dotenv = require('dotenv').config()
+
 
 
 //middlewares will go here
@@ -27,7 +28,7 @@ app.use(session({
 }));
 app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: "http://localhost:3000/",
       methods: "GET,POST,PUT,DELETE",
       credentials: true,
     })
@@ -44,7 +45,9 @@ app.use(userRoute);
 app.use(itemRoute);
 app.use(loginRoute);
 app.use(registerRoute);
+app.use(paymentRoute);
 app.use(userItemRoute);
+
 
 
 server.listen(port, hostname, () => {
