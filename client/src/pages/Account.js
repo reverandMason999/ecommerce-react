@@ -34,8 +34,9 @@ const Account = () => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <Field type="email" name="email" placeholder='email'/>
+          <Form className ='account-form' >
+            
+          <Field   type="email" name="email" placeholder='email'/>
             <ErrorMessage name="email" component="div" />
             <Field type="password" name="password" placeholder='password' />
             <ErrorMessage name="password" component="div" />
