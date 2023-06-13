@@ -33,7 +33,7 @@ const TopBar = () => {
             {/* <Nav.Link href="#action2">Deals</Nav.Link>  */}
             <Nav.Link as={Link} to="/Buy"> Buy</Nav.Link>
             <Nav.Link as={Link} to="/sell"> Sell</Nav.Link>
-            <Nav.Link as={Link} to="/account"> Account</Nav.Link>
+            <Nav.Link as={Link} to="/account"> Hello, Sign in <br></br> Account</Nav.Link>
             <Nav.Link href="#" disabled>
 
             </Nav.Link>
@@ -53,7 +53,9 @@ const TopBar = () => {
           </div>
           <div className='cart'>
           <BsCart4 /> </div>
-        
+        <div className='logo' > 
+        <img alt='' src='/client/src/images/ShopSavvy-logos.jpg'></img>
+        </div>
         </Navbar.Collapse>
 
       </Container>
