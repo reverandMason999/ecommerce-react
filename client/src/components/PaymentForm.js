@@ -1,47 +1,40 @@
 import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
-
 const Card_OPTIONS = {
   iconStyle: "solid",
   style: {
     base: {
-      iconColor: "#c4f0ff",
+      iconColor: "#C4F0FF",
       color: "#fff",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
     },
     invalid: {
-      iconColor: "#ffc7ee",
-      color: "#ffc7ee"
+      iconColor: "#FFC7EE",
+      color: "#FFC7EE"
     }
   }
 };
-
 export default function PaymentForm() {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
     });
-
     if (!error) {
       try {
         const { id } = paymentMethod;
-        console.log(id);
-
         const response = await axios.post(
-          "http://localhost:5000/payment",
+          "/payment",
           {
             amount: 1000,
-            id
+            id: id
           },
           {
             withCredentials: true,
@@ -50,13 +43,12 @@ export default function PaymentForm() {
             },
           }
         );
-
         const responseData = response.data;
         console.log(responseData);
-
         if (responseData.success) {
           setSuccess(true);
         } else {
+            console.log("wrong credentials")
           // Handle payment failure
         }
       } catch (error) {
@@ -64,7 +56,6 @@ export default function PaymentForm() {
       }
     }
   };
-
   return (
     <>
       {!success ? (
