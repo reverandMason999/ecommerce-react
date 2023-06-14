@@ -1,11 +1,10 @@
-import Banner from './components/Banner';
-import Categories from './components/Categories';
+
 import * as React from 'react'
 import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "./logo.svg";
 import "./App.css";
-import TopBar from './components/TopBar';
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Buy from "./pages/Buy";
@@ -19,15 +18,7 @@ import Account from "./pages/Account";
 
 function App() {
   return (
-  
-    <>  <Router>
-    <div className="App">
-      <header className="App-header">
-        <TopBar/>
-      </header>
-        <Banner/>
-        <Categories/>
-    </div>
+     <Router>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
@@ -41,8 +32,6 @@ function App() {
         <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
-
-    </>
   );
 }
 export default App;
