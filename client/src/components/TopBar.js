@@ -55,9 +55,6 @@ const TopBar = () => {
           <Nav.Link className="account" as={Link} to="/account"> Account</Nav.Link>
           <div className='cart'>
           <BsCart4 /> </div>
-        <div className='logo' > 
-        <img alt='' src='/client/src/images/ShopSavvy-logos.jpg'></img>
-        </div>
         </Navbar.Collapse>
 
       </Container>
