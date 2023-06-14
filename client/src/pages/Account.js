@@ -40,7 +40,7 @@ const Account = () => {
             <ErrorMessage name="email" component="div" />
             <Field type="password" name="password" placeholder='password' />
             <ErrorMessage name="password" component="div" />
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} className='account-button'>
               Register
             </Button>
           </Form>
