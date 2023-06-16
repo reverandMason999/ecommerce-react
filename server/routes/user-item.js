@@ -53,7 +53,7 @@ router.put("/user/:userId/item/:id", isAuth, async (req, res) => {
   });
   res.json(updatedItem);
 });
-//we can post to this client side on like a delete button or smth
+//this delete's a user's item, maybe we can add a little trash button that calls to this route
 router.delete("/user/:userId/item/:id", isAuth,async (req, res) => {
   const { userId, id } = req.params;
   const user = await User.findByPk(userId);
