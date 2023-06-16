@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { User } = require('../models')
 const rateLimit = require('express-rate-limit');
-const { check, validationResult } = require('express-validator');  
+const { check, validationResult, ExpressValidator } = require('express-validator');  
 
 const registerLimit = rateLimit({
     windowMs: 25 * 60 * 1000, // 25 minutes
@@ -11,10 +11,9 @@ const registerLimit = rateLimit({
 	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
 	legacyHeaders: false, 
 });
-
-  
+//this is for registration, make sure we include form validation client side that conforms to the server's data validation
 router.post('/register', registerLimit, [
-    check('username', 'Username must be at least 5 characters').not().isEmpty(),
+    check('username', 'Username must be at least 5 characters').not().isEmpty().isLength({min: 5}).trim(),
     check('email', 'Email must be valid').not().isEmpty().isEmail().normalizeEmail(),
     check('password', 'Password must be at least 5 characters').not().isEmpty().isLength({min: 5}).trim()
     ],async (req, res) => { 

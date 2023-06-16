@@ -13,16 +13,6 @@ router.get('/item/:id', async (req, res) => {
     res.json(item)
 });
 
-router.post('/item', async (req, res) => {
-    const { name, price, category, img } = req.body;
-    const newItem = await Item.create({
-        name,
-        price,
-        category,
-        img
-    });
-    res.json(newItem)
-});
 
 router.put('/item/:id', async (req, res) => {
     const { id } = req.params;

@@ -4,9 +4,11 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
    await queryInterface.bulkInsert('Items', [{
-    name: 'timing exercises',
+    name: 'computer',
     price: '50.00',
     category: 'electronics',
+    description: 'an old computer',
+    img: 'computer.png',
     userId: 1,
     createdAt: new Date(),
     updatedAt: new Date()
