@@ -52,7 +52,7 @@ const TopBar = () => {
           </Form>
           
           </div>
-          <Nav.Link className="account" as={Link} to="/account"> Account</Nav.Link>
+          <Nav.Link className="login" as={Link} to="/Login">Login</Nav.Link>
           <div className='cart'>
           <BsCart4 /> </div>
         </Navbar.Collapse>

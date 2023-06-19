@@ -7,6 +7,7 @@ import "./App.css";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Profile from './pages/Profile';
 import Buy from "./pages/Buy";
 import Checkout from "./pages/Checkout";
 import NewItem from "./pages/NewItem";
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/newitem" element={<NewItem />} />
