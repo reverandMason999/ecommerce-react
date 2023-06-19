@@ -4,13 +4,14 @@ const cors = require('cors');
 const session = require('express-session');
 const helmet = require('helmet');
 const passport = require('passport');
-const dotenv = require('dotenv').config();
+ require('dotenv').config();
 
 const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const paymentRoute = require('./routes/Payment');
+const userItemRoute = require('./routes/user-item');
 
 const app = express();
 const server = http.createServer(app);
@@ -43,6 +44,7 @@ app.use(itemRoute);
 app.use(loginRoute);
 app.use(registerRoute);
 app.use(paymentRoute);
+app.use(userItemRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
