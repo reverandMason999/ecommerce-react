@@ -60,3 +60,36 @@ h1,h3 {
 	width: 40%;
 }
 
+.sell-name{
+	width: 40%;
+	margin-left: 30%;
+}
+.sell-price{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 20px;
+}
+
+.sell-category{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 20px;
+}
+
+.sell-description{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 20px;
+}
+
+.sell-submit{
+	width: 20%;
+	margin-left: 40%;
+	margin-top: 20px;
+}
+
+.sell-image{
+	width: 40%;
+	margin-left: 30%;
+	margin-top: 20px;
+}
