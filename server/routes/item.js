@@ -25,7 +25,20 @@ router.get('/item/:category', async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: 'invalid!'})
     }
-    r
+    
+});
+
+router.post('/item', async(req, res) => {
+    const { name, category, price, description, img } = req.body;
+    const newItem = await Item.create({
+        name,
+        category,
+        price,
+        description,
+        img,
+  
+      });
+      res.json(newItem)
 })
 
 

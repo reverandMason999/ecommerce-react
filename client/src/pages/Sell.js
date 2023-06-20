@@ -1,21 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import axios from 'axios';
 
 const Sell = () => {
+  const [ state, setState ] = useState({
+    name: '',
+    price: '',
+    category: '',
+    description: '',
+    img: ''
+  })
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+        ...state,
+        [e.target.name]: value
+    });
+}
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const itemData = {
+    name: state.name,
+    price: state.price,
+    category: state.category,
+    description: state.description,
+    img: state.img
+  }
+  axios.post('/item', itemData,{
+    withCredentials: true,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  } ).then((res) => {
+    console.log(res.data)
+});
+  
+}
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <div className='sell-name'>
-        <Form.Group>
+        <Form.Group value={state.name} onChange={handleChange}>
           <Form.Label> Product name</Form.Label>
-          <Form.Control type="name" placeholder="Enter name" />
+          <Form.Control  type="name" placeholder="Enter name" />
         </Form.Group>
       </div>
       <div className='sell-price'>
-        <InputGroup className="mb-3">
+        <InputGroup value={state.price} onChange={handleChange} className="mb-3">
           <InputGroup.Text>$</InputGroup.Text>
-          <Form.Control aria-label="Amount (to the nearest dollar)" />
+          <Form.Control  aria-label="Amount (to the nearest dollar)" />
           <InputGroup.Text>.00</InputGroup.Text>
         </InputGroup>
       </div>
@@ -28,15 +62,15 @@ const Sell = () => {
         </Form.Select>
       </div>
       <div className='sell-description'>
-        <Form.Group >
+        <Form.Group value={state.description} onChange={handleChange}>
           <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea" rows={3} />
+          <Form.Control  as="textarea" rows={3} />
         </Form.Group>
       </div>
       <div className='sell-image'>
-      <Form.Group controlId="formFile" className="mb-3">
+      <Form.Group controlId="formFile" className="mb-3" value={state.img} onChange={handleChange}>
         <Form.Label>Import image</Form.Label>
-        <Form.Control type="file" />
+        <Form.Control  type="file" />
       </Form.Group>
       </div>
       <Button variant="primary" type="submit" className='sell-submit'>

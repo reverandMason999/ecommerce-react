@@ -11,9 +11,10 @@ const User = () => {
         .catch(err => console.log(err))
     }, [])
     return(
-        <>
-        <div>hi {data[0].username}</div>
-        </>
+
+        <div>
+            <h2>hi! {data[0].username}</h2>
+        </div>
     )
 }
 
