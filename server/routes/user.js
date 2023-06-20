@@ -24,7 +24,7 @@ router.delete('/user/:id', async (req, res) => {
     res.json(deletedUser);
 });
 
-//this will update a user by sending their input as the request body 
+//this will update a user by sending their input as the request body, we could hook this up to an edit account form
 router.put('/user/:id', async (req, res) => {
     const { id } = req.params;
     const updatedUser = await User.update(req.body, {

@@ -3,8 +3,10 @@ const router = express.Router();
 const { User, Item } = require("../models");
 const isAuth = require('../auth/authMiddleware').isAuth
 //these routes associate items created by users
+//the isAuth middleware only allows the user to make calls to these routes 
+//so definitely make sure a user's logged in before testing
 
-router.get("/user/item/:userId", isAuth, async (req, res) => {
+router.get("/user/item/:userId", async (req, res) => {
   const { userId } = req.params;
   const items = await Item.findAll({
     where: { userId },
@@ -13,10 +15,10 @@ router.get("/user/item/:userId", isAuth, async (req, res) => {
   res.json(items);
 });
 
-//this route creates a listing associated with the user who created it
+//this route creates a listing associated with the user who created it, we could attach this to a form on the user's profile page or the sell page.
 router.post("/user/item/:userId", isAuth, async (req, res) => {
   const { userId } = req.params;
-  const { name, category, price } = req.body;
+  const { name, category, price, description, img } = req.body;
 
   try {
     const user = await User.findByPk(userId);
@@ -27,6 +29,10 @@ router.post("/user/item/:userId", isAuth, async (req, res) => {
       name,
       category,
       price,
+      description,
+      img,
+      userId
+
     });
     res.status(201).json(item);
   } catch (err) {
@@ -34,8 +40,8 @@ router.post("/user/item/:userId", isAuth, async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-// could do like an edit listing button that posts to this
-router.put("/user/:userId/item/:id", isAuth,async (req, res) => {
+// this updates a user's listing
+router.put("/user/:userId/item/:id", isAuth, async (req, res) => { 
   const { userId, id } = req.params;
   const user = await User.findByPk(userId);
   if (!user) return res.status(404).json({ error: "User not found" });
@@ -47,7 +53,7 @@ router.put("/user/:userId/item/:id", isAuth,async (req, res) => {
   });
   res.json(updatedItem);
 });
-//we can post to this client side on like a delete button or smth
+//this delete's a user's item, maybe we can add a little trash button that calls to this route
 router.delete("/user/:userId/item/:id", isAuth,async (req, res) => {
   const { userId, id } = req.params;
   const user = await User.findByPk(userId);
