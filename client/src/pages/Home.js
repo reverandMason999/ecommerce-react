@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "../components/Search";
 import Account from "./Account";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import Categories from "../components/Categories";
 import TopBar from "../components/TopBar";
 
@@ -15,6 +16,7 @@ const Home = () => {
       </header>
       <Banner />
       <Categories />
+      <Footer />
     </div>
   );
 };
