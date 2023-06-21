@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './User.css'
 
 
 const User = () => {
@@ -12,8 +13,9 @@ const User = () => {
     }, [])
     return(
 
-        <div>
-            <h2>hi! {data[0].username}</h2>
+        <div className="profile-container">
+            <img src="../images/generic-profile.png" />
+            <h2>{data[0]?.username}</h2>
         </div>
     )
 }
