@@ -12,11 +12,15 @@ const User = () => {
         .catch(err => console.log(err))
     }, [])
     return(
-
+        <>
         <div className="profile-container">
             <img src="../images/generic-profile.png" />
-            <h2>{data[0]?.username}</h2>
+            <h3>{data[0]?.username}</h3>
         </div>
+        <div className="bio-div">
+            <h3>Your bio!</h3>
+        </div>
+        </>
     )
 }
 

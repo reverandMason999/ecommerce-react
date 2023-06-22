@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
     description: state.description,
     img: state.img
   }
-  axios.post('/item', itemData,{
+  axios.post('/item', itemData, {
     withCredentials: true,
     headers: {
       "Content-Type": "application/json",
@@ -41,15 +41,15 @@ const handleSubmit = (e) => {
   return (
     <Form onSubmit={handleSubmit}>
       <div className='sell-name'>
-        <Form.Group value={state.name} onChange={handleChange}>
+        <Form.Group >
           <Form.Label> Product name</Form.Label>
-          <Form.Control  type="name" placeholder="Enter name" />
+          <Form.Control  name="name" type="name" placeholder="Enter name" value={state.name} onChange={handleChange}/>
         </Form.Group>
       </div>
       <div className='sell-price'>
-        <InputGroup value={state.price} onChange={handleChange} className="mb-3">
+        <InputGroup  className="mb-3">
           <InputGroup.Text>$</InputGroup.Text>
-          <Form.Control  aria-label="Amount (to the nearest dollar)" />
+          <Form.Control  aria-label="Amount (to the nearest dollar)" name="price" value={state.price} onChange={handleChange}/>
           <InputGroup.Text>.00</InputGroup.Text>
         </InputGroup>
       </div>
@@ -62,15 +62,15 @@ const handleSubmit = (e) => {
         </Form.Select>
       </div>
       <div className='sell-description'>
-        <Form.Group value={state.description} onChange={handleChange}>
+        <Form.Group >
           <Form.Label>Description</Form.Label>
-          <Form.Control  as="textarea" rows={3} />
+          <Form.Control  name="description" as="textarea" rows={3} value={state.description} onChange={handleChange}/>
         </Form.Group>
       </div>
       <div className='sell-image'>
-      <Form.Group controlId="formFile" className="mb-3" value={state.img} onChange={handleChange}>
+      <Form.Group controlId="formFile" className="mb-3" >
         <Form.Label>Import image</Form.Label>
-        <Form.Control  type="file" />
+        <Form.Control  name="img" type="file" value={state.img} onChange={handleChange} />
       </Form.Group>
       </div>
       <Button variant="primary" type="submit" className='sell-submit'>

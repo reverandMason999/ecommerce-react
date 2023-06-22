@@ -27,19 +27,21 @@ router.get('/item/:category', async (req, res) => {
     }
     
 });
-
-router.post('/item', async(req, res) => {
-    const { name, category, price, description, img } = req.body;
+ 
+router.post('/item', async (req, res) => {
+    const { name, category, price, description, img, userId } = req.body;
     const newItem = await Item.create({
         name,
         category,
         price,
         description,
         img,
+        userId
   
       });
+      
       res.json(newItem)
-})
+});
 
 
 router.put('/item/:id', async (req, res) => {
