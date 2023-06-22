@@ -54,11 +54,12 @@ const handleSubmit = (e) => {
         </InputGroup>
       </div>
       <div className='sell-category'>
-        <Form.Select >
+        <Form.Select name='category' value={state.category} onChange={handleChange}>
           <option>Select a Category</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Tech">Tech</option>
+          <option value="Jewelry">Jewelry</option>
+          <option value="Clothing">Clothing</option>
         </Form.Select>
       </div>
       <div className='sell-description'>

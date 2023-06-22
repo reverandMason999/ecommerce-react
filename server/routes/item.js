@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Item } = require('../models');
+const fs = require('fs');
 //I think these one's we mostly won't need, maybe the get requests to display the items on an explore page or maybe the home page
 router.get('/item', async (req, res) => {
     const items = await Item.findAll()
@@ -27,22 +28,36 @@ router.get('/item/:category', async (req, res) => {
     }
     
 });
- 
-router.post('/item', async (req, res) => {
-    const { name, category, price, description, img, userId } = req.body;
-    const newItem = await Item.create({
-        name,
-        category,
-        price,
-        description,
-        img,
-        userId
-  
-      });
-      
-      res.json(newItem)
-});
 
+
+const saveImage = (file, path) => {
+    fs.writeFile(path, file.data, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Image saved successfully!');
+      }
+    });
+  };
+  
+  router.post('/item', async (req, res) => {
+    const { name, category, price, description, img, userId } = req.body;
+    const file = req.files.img;
+    const filePath = `/client/public/images/${file.name}`;
+    
+    saveImage(file, filePath); 
+    
+    const newItem = await Item.create({
+      name,
+      category,
+      price,
+      description,
+      img: filePath,
+      userId
+    });
+    
+    res.json(newItem);
+  });
 
 router.put('/item/:id', async (req, res) => {
     const { id } = req.params;
