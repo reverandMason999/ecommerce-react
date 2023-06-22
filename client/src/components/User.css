@@ -1,0 +1,19 @@
+.profile-container {
+    display: block;
+    width: 260px;
+    height: 300px;
+    
+    
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    margin-left: 15px;
+}
+
+h3 {
+    margin-right: 50px;
+    font-size: medium;
+
+}
