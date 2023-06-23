@@ -1,10 +1,9 @@
 import React from 'react'
 import "../components/Itemcard"
-import Itemcard from '../components/Itemcard'
-
+import Itemlist from '../components/Itemlist'
 const Buy = () => {
   return (
-   <Itemcard/>
+   <Itemlist items={items} />
   )
 }
 
