@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './User.css'
+import Button from 'react-bootstrap/Button';
+
 
 
 const User = () => {
@@ -14,7 +16,7 @@ const User = () => {
     return(
         <>
         <div className="profile-container">
-            <img src="../images/generic-profile.png" />
+            <img src="../images/generic-profile.png"/>
             <h3>{data[0]?.username}</h3>
         </div>
         <div className="bio-div">
