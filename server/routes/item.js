@@ -42,17 +42,17 @@ const saveImage = (file, path) => {
   
   router.post('/item', async (req, res) => {
     const { name, category, price, description, img, userId } = req.body;
-    const file = req.files.img;
-    const filePath = `/client/public/images/${file.name}`;
+    // const file = req.files.img;
+    // const filePath = `/client/public/images/${file.name}`;
     
-    saveImage(file, filePath); 
+    // saveImage(file, filePath); 
     
     const newItem = await Item.create({
       name,
       category,
       price,
       description,
-      img: filePath,
+      img,
       userId
     });
     
