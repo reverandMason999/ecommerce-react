@@ -1,10 +1,14 @@
 import React from 'react'
 import "../components/Itemcard"
 import Itemlist from '../components/Itemlist'
+import TopBar from '../components/TopBar'
 
 const Buy = ({ items }) => {
   return (
-   <Itemlist items={items} />
+  <>
+  <TopBar />
+  <Itemlist items={items} />
+  </>
   )
 }
 
