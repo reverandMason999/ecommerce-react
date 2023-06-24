@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from 'axios';
+import TopBar from '../components/TopBar';
 
 const Sell = () => {
   const [ state, setState ] = useState({
@@ -39,6 +40,8 @@ const handleSubmit = (e) => {
   
 }
   return (
+    <>
+    <TopBar/>
     <Form onSubmit={handleSubmit}>
       <div className='sell-name'>
         <Form.Group >
@@ -78,6 +81,7 @@ const handleSubmit = (e) => {
         Submit
       </Button>
     </Form>
+    </>
   );
 };
 
