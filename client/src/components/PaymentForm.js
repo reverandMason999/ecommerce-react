@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
+
 const Card_OPTIONS = {
   iconStyle: "solid",
   style: {
@@ -17,6 +18,8 @@ const Card_OPTIONS = {
     }
   }
 };
+
+
 export default function PaymentForm() {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
@@ -33,7 +36,7 @@ export default function PaymentForm() {
         const response = await axios.post(
           "/payment",
           {
-            amount: 1000,
+            amount: 5000,
             id: id
           },
           {
