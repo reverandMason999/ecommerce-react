@@ -10,12 +10,11 @@ import Login from "./pages/Login";
 import Profile from './pages/Profile';
 import Buy from "./pages/Buy";
 import Checkout from "./pages/Checkout";
-import NewItem from "./pages/NewItem";
 import Product from "./pages/Product";
 import ProductSearch from "./pages/ProductSearch";
 import Sell from "./pages/Sell";
 import SignUp from "./pages/SignUp";
-import Account from "./pages/Account";
+
 
 function App() {
   return (
@@ -26,12 +25,10 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/newitem" element={<NewItem />} />
         <Route path="/product" element={<Product />} />
         <Route path="/productsearch" element={<ProductSearch />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );
