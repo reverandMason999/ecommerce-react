@@ -1,0 +1,36 @@
+.login-card {
+    display: block;
+    border: 1px solid #e6ba29;
+    background-color: #e1e1df;
+    width: 30%;
+    border-radius: 5px;
+    padding: 10px 20px 30px;
+    margin-top: 85px;
+    margin-left: 35%;
+    
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.btn {
+    width: 70px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 50%;
+    color: white;
+    background-color: rgb(233, 92, 92);
+}
+
+h3, h1 {
+    text-align: center;
+    color: #e6ba29;;
+}
+
+
+input {
+    margin: 8px;
+}
