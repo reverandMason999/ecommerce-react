@@ -2,14 +2,17 @@ import React from 'react'
 import StripeContainer from '../components/StripeContainer'
 import { useState } from 'react'
 import "./Checkout.css"
+import { useLocation } from 'react-router-dom'
 
 const Checkout = () => {
   const [showItem, setShowItem] = useState(false)
+  const location = useLocation()
+  const price = location.state && location.state.price
   return (
     <div>
 
     <h1>Checkout</h1>
-    {showItem ? <StripeContainer/> : <> <h3>$10.00</h3> <button onClick={() => setShowItem(true)}>Purchase Item</button> </>}
+    {showItem ? <StripeContainer/> : <> <h3>{price}</h3> <button onClick={() => setShowItem(true)}>Purchase Item</button> </>}
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import React from 'react'
+import "../components/Itemcard"
+import Itemlist from '../components/Itemlist'
 
-const Buy = () => {
+const Buy = ({ items }) => {
   return (
-    <div>Buy</div>
+   <Itemlist items={items} />
   )
 }
 
