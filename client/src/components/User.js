@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './User.css'
-import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router-dom";
+
 
 
 
 const User = () => {
-    const navigate = useNavigate();
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get('/user').then(res => {
@@ -19,7 +17,7 @@ const User = () => {
     return(
         <>
         <div className="profile-container">
-            <img src="../images/generic-profile.png"/>
+            <img src="../images/generic-profile.png" alt="generic-profile"/>
             <h3>{data[0]?.username}</h3>
         </div>
         <div className="bio-div">

@@ -4,7 +4,7 @@ const cors = require('cors');
 const session = require('express-session');
 const helmet = require('helmet');
 const passport = require('passport');
- require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 const userRoute = require('./routes/user');
 const itemRoute = require('./routes/item');

@@ -9,6 +9,7 @@ import TopBar from '../components/TopBar';
 
 
 const SignUp = ({newUser}) => {
+  const navigate = useNavigate()
   const [state, setState] = useState({
     username: '',
     email:'',
@@ -38,6 +39,7 @@ const handleSubmit = (e) => {
       console.log(res.data)
       newUser(res.data)
   });
+  navigate('/Login')
   
 }
   return (
