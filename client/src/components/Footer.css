@@ -3,7 +3,7 @@
 }
    
 .payment-icon{
-    max-height: 6vh;
+    max-height: 5vh;
     padding-right: 6px;
 
 }
@@ -29,3 +29,9 @@
     justify-content: space-evenly;
     margin-left: 0.1rem;
 }
+
+.social-icon {
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+  }
