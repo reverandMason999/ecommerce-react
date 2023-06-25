@@ -12,16 +12,6 @@ const Itemlist = ({ items }) => {
             setData(res.data)})
         .catch(err => console.log(err))
     }, [])
-    // const renderItems = () => {
-    //     return items.length ? (
-    //         <div className='user-list'>
-    //             {items.map((item) => <Itemcard item={item} key={items.id} />)}
-    //         </div>
-    //     ) : (
-    //         <div>no users</div>
-    //     )
-    // }
-
     return(
         <div className='item-list-container'>
             <h1 className='item-title'>Newest items for sale!</h1>

@@ -16,7 +16,7 @@ router.post('/login', loginLimit, passport.authenticate('local', { failureFlash:
     res.json(req.user);  //req.user is the logged in user info on the session object
   });
 //can post this to a logout button, will destroy the user's session
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
 
     req.session.destroy((err) => {
       if (err) {

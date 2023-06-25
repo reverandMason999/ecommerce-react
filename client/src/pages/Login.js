@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import './Login.css'
+import TopBar from "../components/TopBar";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,6 +35,8 @@ const handleSubmit = (e) => {
 
 }
   return (
+    <>
+    <TopBar />
     <div className="login-card">
     <h1>login here!</h1>
         <form className='login-form' onSubmit={handleSubmit}>
@@ -43,6 +47,7 @@ const handleSubmit = (e) => {
         </form>
          <Link to={'/SignUp'}>Register here!</Link>
         </div>
+        </>
   )
 }
 

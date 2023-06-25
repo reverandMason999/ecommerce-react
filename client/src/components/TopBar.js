@@ -30,12 +30,10 @@ const TopBar = () => {
               <NavDropdown.Item href="#action3">Clothing</NavDropdown.Item>
               <NavDropdown.Item href="#action3">Jewelry</NavDropdown.Item>
             </NavDropdown>
-            {/* <Nav.Link href="#action1">Home</Nav.Link> */}
-            {/* <Nav.Link href="#action2">Deals</Nav.Link>  */}
             <Nav.Link as={Link} to="/Buy"> Buy</Nav.Link>
             <Nav.Link as={Link} to="/sell"> Sell</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link href="#" disabled>
-
             </Nav.Link>
           </Nav>
           <div>
