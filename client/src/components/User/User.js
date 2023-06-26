@@ -17,7 +17,7 @@ const User = () => {
     return(
         <>
         <div className="profile-container">
-            <img src="../images/generic-profile.png" alt="generic-profile"/>
+            <img src="../../images/generic-profile.png" alt="generic-profile"/>
             <h3>{data[0]?.username}</h3>
         </div>
         <div className="bio-div">

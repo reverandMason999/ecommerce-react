@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Itemcard from "./Itemcard";
-import Checkout from "../pages/Checkout";
+import Checkout from "../../pages/Checkout/Checkout";
+import './itemlist.css'
 
 
 const Itemlist = ({ items }) => {

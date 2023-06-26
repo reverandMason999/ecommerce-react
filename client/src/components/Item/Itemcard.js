@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
-import CardImage from "../images/no-image-placeholder.png"
+import CardImage from "../../images/no-image-placeholder.png"
 
 const Itemcard = ({ items }) => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const Itemcard = ({ items }) => {
       <Card.Img variant="top" src={CardImage} />
       <Card.Body>
         <Card.Title>{items.name}</Card.Title>
+        <Card.Text>{items.category}</Card.Text>
         <Card.Text>
         {items.description}
         <Card.Text>

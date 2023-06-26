@@ -4,15 +4,13 @@ import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Profile from './pages/Profile';
-import Buy from "./pages/Buy";
-import Checkout from "./pages/Checkout";
-import Product from "./pages/Product";
-import ProductSearch from "./pages/ProductSearch";
-import Sell from "./pages/Sell";
-import SignUp from "./pages/SignUp";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Profile from './pages/Profile/Profile';
+import Buy from "./pages/Buy/Buy";
+import Checkout from "./pages/Checkout/Checkout";
+import Sell from "./pages/Sell/Sell";
+import SignUp from "./pages/SignUp/SignUp";
 
 
 function App() {
@@ -24,8 +22,6 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/productsearch" element={<ProductSearch />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>

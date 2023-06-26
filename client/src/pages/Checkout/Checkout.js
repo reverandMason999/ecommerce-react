@@ -1,9 +1,9 @@
 import React from 'react'
-import StripeContainer from '../components/StripeContainer'
+import StripeContainer from '../../components/Payment/StripeContainer'
 import { useState } from 'react'
 import "./Checkout.css"
 import { useLocation } from 'react-router-dom'
-import TopBar from '../components/TopBar'
+import TopBar from '../../components/TopBar/TopBar'
 
 const Checkout = () => {
   const [showItem, setShowItem] = useState(false)
