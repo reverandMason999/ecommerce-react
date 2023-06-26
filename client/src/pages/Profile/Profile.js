@@ -1,6 +1,6 @@
 
-import TopBar from "../components/TopBar";
-import User from "../components/User"
+import TopBar from "../../components/TopBar/TopBar";
+import User from "../../components/User/User"
 
 const Profile = () => {
     

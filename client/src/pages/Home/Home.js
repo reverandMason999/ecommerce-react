@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Banner from "../components/Banner";
-import Footer from "../components/Footer";
-import Categories from "../components/Categories";
-import TopBar from "../components/TopBar";
+import Banner from "../../components/Banner/Banner";
+import Footer from "../../components/Footer/Footer";
+import Categories from "../../components/Categories/Categories";
+import TopBar from "../../components/TopBar/TopBar";
 
 const Home = () => {
   return (

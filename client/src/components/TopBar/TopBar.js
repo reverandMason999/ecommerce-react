@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './TopBar.css';
 import { BsCart4 } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import shopSavvyImage from "../images/shopsavvy_icon.jpg"
+import shopSavvyImage from "../../images/shopsavvy_icon.jpg"
 
 const TopBar = () => {
   return (

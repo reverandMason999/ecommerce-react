@@ -2,13 +2,14 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
-import TopBar from '../components/TopBar';
+import TopBar from '../../components/TopBar/TopBar';
 
 
 
 
 
 const SignUp = ({newUser}) => {
+  const navigate = useNavigate()
   const [state, setState] = useState({
     username: '',
     email:'',
@@ -38,6 +39,7 @@ const handleSubmit = (e) => {
       console.log(res.data)
       newUser(res.data)
   });
+  navigate('/Login')
   
 }
   return (

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import axios from 'axios';
-import TopBar from '../components/TopBar';
+import TopBar from '../../components/TopBar/TopBar';
 
 const Sell = () => {
   const [ state, setState ] = useState({
